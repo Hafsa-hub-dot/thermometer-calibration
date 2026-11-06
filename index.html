@@ -1,0 +1,191 @@
+<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>مختبر معايرة مقياس الحرارة</title><style>
+@import url('https://fonts.googleapis.com/css2?family=Markazi+Text:wght@400;500;600;700&display=swap');
+:root{--teal:#b80013;--red:#bc3942;--ink:#152629;--muted:#637276;--line:#ddd;--bg:#fff}*{box-sizing:border-box}html,body{margin:0;background:white;color:var(--ink);font-family:'Markazi Text',Tahoma,serif}button,input{font:inherit}button{cursor:pointer}#app{height:100dvh;min-height:530px;display:flex;flex-direction:column;overflow:hidden}.top{height:66px;flex-shrink:0;border-bottom:2px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:7px 2.2vw;gap:8px}.brand{font-weight:700;font-size:clamp(23px,2.7vw,37px);color:var(--ink)}.tabs{display:flex;gap:6px}.tabs button,.action,.minor{background:white;border:1.5px solid #c6c6c6;border-radius:12px;padding:5px 18px;font-size:clamp(19px,1.7vw,26px);font-weight:700;color:var(--teal)}.tabs button.active,.action{background:var(--teal);color:#fff;border-color:var(--teal)}.minor{padding:4px 12px}.main{flex:1;min-height:0;position:relative;display:flex;flex-direction:column}.screen{flex:1;min-height:0;display:none;flex-direction:column;padding:1.6vh 2.5vw 2vh}.screen.active{display:flex}.heading{font-size:clamp(30px,3.3vw,51px);font-weight:700;text-align:center;margin:0 0 .6vh;line-height:1.05}.sub{font-size:clamp(21px,2vw,30px);text-align:center;margin:0 0 10px;color:#4e6263}.panel{border:2px solid #ddd;border-radius:18px;padding:16px;background:#fff}.wide{display:grid;grid-template-columns:1.02fr 1fr;gap:2vw;flex:1;min-height:0}.picture{display:flex;justify-content:center;align-items:center;position:relative;min-height:0}.picture svg{height:100%;max-height:520px;width:100%}.work{display:flex;flex-direction:column;justify-content:center;gap:12px;min-height:0}.prompt{font-size:clamp(25px,2.5vw,39px);font-weight:700;line-height:1.08}.help{font-size:clamp(20px,1.9vw,29px);color:#576467;line-height:1.13}.answers{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.choice{border:2px solid #a8c6c5;border-radius:14px;background:#fff;padding:9px 10px;color:#152629;font-size:clamp(25px,2.2vw,35px);font-weight:700}.choice.selected{border-color:#b80013;background:#fff}.choice.good{border-color:#b80013;background:#fff}.choice.bad{border-color:#bd4141;background:#fff0f0}.note{min-height:39px;font-size:clamp(20px,1.8vw,29px);font-weight:700;color:var(--teal)}.controls{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}.action:disabled{opacity:.4;cursor:not-allowed}.progress{height:6px;background:#efefef;flex-shrink:0}.progress>div{height:100%;width:0;background:var(--teal);transition:width .3s}.footer{display:flex;justify-content:space-between;align-items:center;padding:6px 2.4vw;border-top:1px solid #e4eeee;font-size:22px;color:#596c6d;min-height:48px}.bigtemp{font-size:clamp(44px,6vw,86px);font-weight:700;color:var(--teal);line-height:.95;text-align:center}.convert{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.convert label{font-size:23px;text-align:center;font-weight:700}.convert input{display:block;width:100%;border:2px solid #aacbc9;border-radius:8px;text-align:center;font-size:clamp(25px,2.4vw,38px);height:55px;color:var(--ink)}.stage-tag{font-size:22px;color:var(--teal);font-weight:700;text-align:center}.tiny{font-size:20px;color:#596c6d}.teacher-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px;flex:1;min-height:0}.teacher-card{border:2px solid var(--line);border-radius:18px;padding:2vw;display:flex;flex-direction:column;gap:10px;justify-content:center}.teacher-card h2{font-size:clamp(28px,3vw,44px);margin:0;color:var(--teal)}.teacher-card p{font-size:clamp(23px,2.3vw,35px);line-height:1.2;margin:0}.teacher-card .em{color:var(--red)}.teacher-card .illustration{font-size:clamp(45px,7vw,100px);text-align:center;line-height:1}.warn{font-size:clamp(19px,1.65vw,25px);color:#9b393f;text-align:center;padding:5px}.sheetouter{flex:1;overflow:auto;min-height:0;display:flex;justify-content:center}.sheet{width: min(100%,810px);background:#fff;border:1px solid #ccd6d6;padding:20px 27px;color:#101819}.sheethead{text-align:center;font-size:24px;border-bottom:2px solid #173335;padding-bottom:6px}.sheet h2{margin:10px 0;font-size:35px;text-align:center}.sheet p,.sheet li,.sheet td,.sheet th{font-size:24px;line-height:1.05}.sheet table{width:100%;border-collapse:collapse;margin:8px 0}.sheet td,.sheet th{border:1px solid #7c8a8a;padding:5px}.sheet .line{display:inline-block;border-bottom:1px dotted #5a6868;min-width:100px;height:23px}.sheet .q{margin:8px 0}.teacher-answers{display:none;background:#fff;border:1px solid #c6c6c6;padding:10px;margin-top:10px}.teacher-answers.show{display:block}.sheet-tools{display:flex;gap:9px;justify-content:center;margin-bottom:8px}.review{font-size:clamp(22px,2vw,30px);line-height:1.14}.resultmark{font-size:33px;text-align:center;color:#b80013;font-weight:700}.pill{display:inline-block;border:1px solid #c6c6c6;border-radius:40px;padding:1px 12px;color:var(--teal)}@media(max-width:720px){#app{min-height:0}.top{height:98px;flex-wrap:wrap;justify-content:center;padding:5px}.brand{font-size:26px}.tabs{width:100%;justify-content:center}.tabs button{font-size:20px;padding:3px 9px}.screen{padding:10px 12px}.wide{grid-template-columns:1fr;grid-template-rows:42% 1fr;gap:6px}.picture svg{max-height:100%}.work{justify-content:flex-start;gap:5px}.prompt{font-size:27px}.help{font-size:21px}.choice{padding:5px;font-size:24px}.answers{gap:5px}.note{font-size:21px;min-height:27px}.action{padding:3px 10px;font-size:22px}.teacher-grid{gap:8px}.teacher-card{padding:9px}.teacher-card h2{font-size:25px}.teacher-card p{font-size:22px}.teacher-card .illustration{font-size:50px}.warn{font-size:19px}.footer{font-size:18px;min-height:40px}.convert label{font-size:19px}.convert input{height:42px;font-size:27px}.sheet{padding:12px}.sheet h2{font-size:29px}.sheet p,.sheet li,.sheet td,.sheet th{font-size:21px}}@media(max-height:680px){.heading{font-size:30px}.sub{font-size:22px}.work{gap:4px}.prompt{font-size:26px}.choice{font-size:23px;padding:5px}.note{min-height:23px;font-size:20px}.bigtemp{font-size:46px}.sheet-tools{margin:0}}
+@media print{html,body,#app{height:auto!important;min-height:0!important;overflow:visible!important}#app>*:not(.main){display:none!important}.main,.screen,.sheetouter{height:auto!important;display:block!important;overflow:visible!important;padding:0!important}.screen:not(#worksheet){display:none!important}#worksheet{display:block!important}.sheet-tools{display:none!important}.sheet{width:100%;border:none;padding:0}.teacher-answers{display:none!important}@page{size:A4 portrait;margin:11mm}}
+</style><style>.labgrid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:2vw;flex:1;min-height:0}.labvisual{min-height:0;display:flex;flex-direction:column;align-items:stretch;justify-content:center;border:2px solid #e0e9e9;border-radius:20px;padding:8px 13px;position:relative}.zones{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}.zone{border:2px solid #ddd;border-radius:12px;padding:5px;text-align:center;font-size:clamp(19px,2vw,29px);font-weight:700;opacity:.65;line-height:1}.zone.on{opacity:1;border-color:#b80013;background:#fff}.zone small{display:block;font-size:clamp(15px,1.25vw,21px);font-weight:400;color:#52666a}.vessel{min-height:0;flex:1;display:flex;justify-content:center}.vessel svg{height:100%;max-height:390px;max-width:100%}.bubble{fill:none;stroke:#fff;stroke-width:4;animation:bubbleRise 1.7s linear infinite}.bubble.b{animation-delay:-.6s}.bubble.c{animation-delay:-1.1s}.bubble.d{animation-delay:-.4s}.bubble.e{animation-delay:-1.5s}.bubble.f{animation-delay:-.9s}@keyframes bubbleRise{0%{transform:translateY(6px);opacity:.25}65%{opacity:1}100%{transform:translateY(-135px);opacity:0}}.reading{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;font-size:clamp(20px,2vw,27px)}.reading b{font-family:Arial,sans-serif;font-size:clamp(26px,3vw,42px);color:#b80013;font-variant-numeric:tabular-nums;direction:ltr}.reading span:last-child{color:#69797b}.heatbanner{background:#fff3f1;border:2px solid #c84548;border-radius:12px;padding:5px 10px;text-align:center;font-size:clamp(19px,1.65vw,25px);font-weight:700;color:#a33034}.heatbanner[hidden]{display:none}.labwork{min-height:0;display:flex;flex-direction:column;justify-content:center;gap:14px}.labactions{display:flex;flex-direction:column;gap:12px}.working{font-size:30px;color:#b13c42;text-align:center;font-weight:700}.labactions .controls{justify-content:center}.predictbox{background:linear-gradient(135deg,#fff06a,#ff9f1a);border:4px solid #ff3b00;border-radius:24px;padding:18px 16px;text-align:center;box-shadow:0 6px 0 #ff3b00}.predictbox .q1{font-size:clamp(30px,3vw,48px);font-weight:700;color:#b80013;line-height:1.05}.predictbox .q2{font-size:clamp(24px,2.4vw,36px);font-weight:700;color:#111;margin-top:8px}.prediction-options{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}.pred-choice{background:#fff;border:3px solid #111;border-radius:14px;padding:8px 10px;font-size:clamp(24px,2.2vw,34px);font-weight:700}.pred-choice.active{background:#b80013;color:#fff;border-color:#b80013}.pred-bottom{display:flex;align-items:center;justify-content:center;gap:12px;margin-top:14px}.clockpill{background:#111;color:#fff;border-radius:999px;padding:4px 18px;font-size:clamp(24px,2vw,34px);font-weight:700}@media(max-width:720px){.labgrid{grid-template-columns:1fr;grid-template-rows:49% 51%;gap:7px}.labvisual{padding:4px}.vessel svg{max-height:100%}.zone{font-size:18px;padding:2px}.zone small{font-size:14px}.reading{font-size:17px;gap:5px}.reading b{font-size:25px}.heatbanner{font-size:17px;padding:2px}.labwork{justify-content:flex-start;gap:6px}.labwork .prompt{font-size:clamp(23px,5vw,29px)}.labwork .help{font-size:20px}.labactions .choice{font-size:20px}.labactions .answers{gap:5px}.labactions .action{font-size:21px}.labactions .controls{gap:5px}.working{font-size:23px}}@media(max-height:700px){.labvisual .vessel svg{max-height:300px}.labwork{gap:6px}.zone{padding:3px}.labactions .choice{font-size:22px;padding:4px}.labwork .prompt{font-size:26px}}</style><style>
+/* الترقيم يظهر فقط بعد اختيار درجة المعايرة */
+#scaleMarks,#zeroMark,#hundredMark,#finalMarks{display:none}
+#hotPlate .heaterGlow{animation:heaterPulse .7s ease-in-out infinite alternate;transform-origin:center}
+#hotPlate .coil{animation:heaterPulse .6s ease-in-out infinite alternate;transform-origin:center}
+@keyframes heaterPulse{from{filter:drop-shadow(0 0 2px #e43b15);opacity:.73}to{filter:drop-shadow(0 0 13px #ff3e00);opacity:1}}
+#hotPlate .heaterBody{fill:#691915;stroke:#a32e20;stroke-width:3}
+#hotPlate .heaterSurface{fill:#f04413;animation:heaterPulse .55s ease-in-out infinite alternate}
+#hotPlate .heaterLight{fill:#ff2300;animation:heaterPulse .4s infinite alternate}
+.surprise{position:fixed;inset:0;z-index:150;background:rgba(16,23,27,.53);display:none;align-items:center;justify-content:center;padding:4vw;direction:rtl}
+.surprise.show{display:flex}
+.surprise-bubble{position:relative;width:min(950px,96vw);background:#fff4c9;border:8px solid #ff3b0a;border-radius:50px;text-align:center;padding:clamp(22px,5vh,65px) clamp(15px,5vw,65px);box-shadow:0 0 0 12px #ffda2e,0 20px 70px #221b0c66;animation:surprisePop .5s cubic-bezier(.2,1.6,.3,1)}
+.surprise-bubble:after{content:'';position:absolute;bottom:-44px;left:20%;border-top:42px solid #ff3b0a;border-left:30px solid transparent;border-right:30px solid transparent}
+.surprise-heading{font-size:clamp(54px,10vw,132px);color:#f02b0a;font-weight:700;line-height:.9;animation:pulseWords .85s infinite alternate}
+.surprise-message{font-size:clamp(29px,4.1vw,58px);line-height:1.15;font-weight:700;color:#192d30;margin:16px 0}
+.surprise-continue{background:#ef340c;color:#fff;border:0;border-radius:16px;font-size:clamp(27px,3vw,41px);font-weight:700;padding:10px 45px}
+@keyframes surprisePop{from{transform:scale(.35) rotate(-7deg);opacity:0}to{transform:scale(1);opacity:1}}
+@keyframes pulseWords{from{transform:scale(.97)}to{transform:scale(1.05)}}
+#entry{position:fixed;inset:0;z-index:100;background:#fff;display:flex;align-items:center;justify-content:center;padding:clamp(12px,3vw,34px);overflow:auto}
+#entry.closed{display:none}
+.entry-card{width:min(1050px,100%);max-height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:clamp(8px,1.6vh,20px);text-align:center}
+.entry-school{font-size:clamp(20px,2.5vw,34px);font-weight:600;color:#53666a;line-height:1.1}
+.entry-eyebrow{color:#b80013;font-weight:700;font-size:clamp(21px,2.8vw,36px)}
+.entry-title{margin:0;font-size:clamp(38px,5.4vw,79px);line-height:1.05;color:#14292b}
+.entry-rule{width:110px;height:4px;border-radius:3px;background:#b80013}
+.entry-objective{font-size:clamp(24px,2.8vw,41px);line-height:1.13;max-width:870px;margin:0}
+.entry-details{width:min(900px,100%);display:grid;grid-template-columns:1fr 1fr;gap:12px;text-align:right}
+.entry-detail{border:2px solid #ddd;border-radius:14px;padding:clamp(8px,1.4vw,17px);font-size:clamp(20px,2vw,29px);line-height:1.12}
+.entry-detail b{color:#b80013}
+.entry-by{font-size:clamp(24px,2.5vw,35px);font-weight:700}
+.entry-btn{border:0;border-radius:14px;background:#b80013;color:white;font-size:clamp(28px,3.3vw,45px);font-weight:700;padding:7px 58px;min-width:230px;cursor:pointer}
+.entry-btn:hover{background:#9e0011}
+@media(max-width:650px){.entry-details{grid-template-columns:1fr;gap:6px}.entry-card{gap:8px}.entry-title{font-size:clamp(34px,9vw,56px)}.entry-detail{font-size:clamp(19px,4.5vw,25px)}}
+@media(max-height:660px){.entry-card{gap:5px}.entry-detail{padding:5px 10px}.entry-title{font-size:clamp(31px,5vw,55px)}.entry-objective{font-size:clamp(21px,2.4vw,30px)}.entry-btn{padding:3px 38px}}
+</style><style>
+/* تجربة المعايرة: ورقة تسجيل وملاحظة */
+.experiment-sheet{padding:14px 20px}
+.experiment-sheet h2{font-size:32px;margin:4px 0}
+.experiment-sheet p{margin:5px 0}
+.student-meta{display:flex;justify-content:space-between;gap:10px;font-size:22px;border-bottom:1px solid #b5c9c8;padding-bottom:4px}
+.sheet-goal{font-size:21px!important;line-height:1.1!important}
+.ws-section{background:#fff;border-right:5px solid #b80013;color:#142c30;font-size:25px;font-weight:700;padding:1px 12px;margin-top:7px}
+.ws-instruction{font-size:21px!important;line-height:1.08!important}
+.ws-thermo-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:4px 0}
+.ws-thermo-box{border:1.5px solid #8a9b9c;border-radius:8px;padding:3px 9px;min-width:0}
+.ws-thermo-box>b{font-size:21px;display:block;text-align:center}
+.ws-thermo-row{display:flex;align-items:center;justify-content:space-evenly;gap:5px;height:166px}
+.worksheet-therm{height:160px;width:84px;flex-shrink:0}
+.ws-record{font-size:22px;line-height:1.45;flex:1}
+.ws-record small{font-size:20px}
+.ws-blank{display:inline-block;min-width:60px;border-bottom:1px dotted #222;height:17px}
+.ws-write{display:block;height:22px;border-bottom:1px dotted #889796;width:98%}
+.ws-table{margin:4px 0!important}
+.ws-table th{font-size:20px!important;background:#fff}
+.ws-table td{height:35px;font-size:22px!important;text-align:center}
+.ws-question{font-size:22px;line-height:1.16;margin:5px 0}
+.ws-question .ws-write{height:18px}
+.ws-choices{display:inline-block;white-space:normal;font-size:20px}
+.ws-footnote{font-size:17px!important;text-align:center;color:#596668;margin:6px 0!important}
+body.print-key .sheet>*:not(.sheethead):not(h2):not(#key){display:none!important}
+body.print-key #key{display:block!important;background:#fff;border:0;font-size:23px}
+body.print-key #key p{font-size:24px!important;line-height:1.4}
+@media print{
+.experiment-sheet{padding:0!important;border:0!important;width:100%!important}
+.experiment-sheet .ws-section{-webkit-print-color-adjust:exact;print-color-adjust:exact;background:#f0f0f0!important}
+.experiment-sheet .ws-thermo-row{height:165px!important}
+.experiment-sheet .ws-thermo-box,.experiment-sheet .ws-section,.experiment-sheet .ws-question,.experiment-sheet .ws-table{break-inside:avoid}
+.experiment-sheet{font-family:'Markazi Text',Tahoma,serif!important}
+@page{size:A4 portrait;margin:9mm}
+}
+</style><style id="v4-simplification">
+:root{--teal:#b80013;--red:#b80013;--ink:#111;--muted:#555;--line:#ddd;--bg:#fff}
+html,body,button,input,.sheet,#entry,#app,.screen,.panel,.labvisual,.teacher-card,.sheetouter{font-family:'Markazi Text',serif!important;background:#fff;color:#111}
+#entry,.top,.screen,.labvisual,.zone,.teacher-card,.teacher-answers,.sheet,.choice,.minor,.panel,.ws-thermo-box{background:#fff!important}
+.entry-title,.entry-eyebrow,.entry-btn,.action,.brand,.heading,.prompt,.sub,.stage-tag,.help{font-family:'Markazi Text',serif!important}
+.entry-title,.heading,.brand,.prompt{color:#111!important}
+.reading{font-size:clamp(19px,1.8vw,26px)}
+.reading b{font-family:'Markazi Text',serif!important;font-size:clamp(24px,2.5vw,34px)!important;color:#b80013!important}
+#stepTitle{font-size:clamp(26px,2.6vw,39px)!important}
+#labPrompt{font-size:clamp(28px,3.1vw,46px)!important;color:#b80013;text-align:center}
+#labHelp:empty,#movementStatus:empty,#labActions:empty{display:none}
+#surprise{position:fixed!important;inset:auto 2.5vw 16vh auto!important;z-index:50;display:none!important;background:transparent!important;padding:0!important;width:min(285px,26vw)!important;pointer-events:none}
+#surprise.show{display:block!important}
+#surprise .surprise-bubble{border:3px solid #b80013!important;border-radius:20px!important;background:#fff!important;box-shadow:none!important;transform:none!important;animation:noteIn .45s ease-out 1!important;padding:11px 14px!important;max-width:100%!important;text-align:center!important}
+#surprise .surprise-heading{font-size:clamp(25px,2.6vw,40px)!important;animation:none!important;color:#b80013!important;line-height:1!important}
+#surprise .surprise-message{font-size:clamp(20px,1.9vw,28px)!important;color:#111!important;margin:6px 0!important;line-height:1.1!important}
+#surprise .surprise-continue{display:none!important}
+@keyframes noteIn{from{opacity:0;transform:translateX(35px)}to{opacity:1;transform:translateX(0)}}
+#heatBanner{display:none!important}
+.heatbanner{background:white!important;color:#b80013!important}
+.heaterGlow{stroke:#e00017!important;animation:heaterPulse .7s ease-in-out infinite alternate}
+.heaterSurface{fill:#bb0010!important;animation:heaterPulse .65s ease-in-out infinite alternate}
+.heaterLight{fill:#bb0010!important}
+@keyframes heaterPulse{from{opacity:.6}to{opacity:1}}
+.entry-btn,.action,.tabs button.active{background:#b80013!important;border-color:#b80013!important;color:#fff!important}
+.choice.good,.choice.selected{border-color:#b80013!important;background:#fff!important}
+@media(max-width:720px){#surprise{width:min(200px,37vw)!important;right:6px!important;bottom:16vh!important}#surprise .surprise-message{font-size:19px!important}#surprise .surprise-heading{font-size:25px!important}}
+@media print{#surprise{display:none!important}}
+</style><style>
+.prediction-options{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:15px}.pred-choice{border:3px solid #b90019;color:#b90019;background:#fff;border-radius:14px;padding:12px 4px;font-size:clamp(29px,3vw,44px);font-weight:700}.pred-choice.selected{background:#b90019;color:#fff}.pred-bottom{display:flex;gap:25px;align-items:center;justify-content:center;margin-top:20px}.pred-bottom #predictionClock{display:flex;align-items:center;justify-content:center;width:84px;height:84px;border:4px solid #b90019;border-radius:50%;font:700 48px Arial;color:#b90019}.pred-bottom button:disabled{opacity:.4}.labwork .prompt{color:#b90019;font-weight:700}.labvisual{background:#fff!important}.labgrid{background:#fff!important}#finalMarks{display:none!important}@media(max-width:720px){.pred-choice{font-size:26px;padding:6px 2px}.pred-bottom{margin-top:8px}.pred-bottom #predictionClock{width:65px;height:65px;font-size:37px}}
+</style><style>.prediction-feedback{font:700 clamp(30px,3vw,45px) "Markazi Text",serif;color:#b80013;margin-top:12px;text-align:center}.pred-choice:disabled{cursor:default}</style></head><body><section id="entry" aria-label="الصفحة الرئيسية للتجربة"><div class="entry-card">
+<div class="entry-school">مدرسة العب الثانوية للبنات · قسم الفيزياء · 2026 / 2027</div>
+<div class="entry-eyebrow">مختبر الفيزياء التفاعلي</div>
+<h1 class="entry-title">معايرة مقياس درجة الحرارة</h1><div class="entry-rule"></div>
+<p class="entry-objective"><strong>الهدف من التجربة:</strong> تحديد نقطتي المعايرة السفلى والعليا لمقياس درجة الحرارة السلسيوسي، وتفسير ثبات درجة حرارة الماء أثناء الغليان.</p>
+<div class="entry-details"><div class="entry-detail"><b>الأدوات:</b> ثرمومتر، خليط ماء وجليد، كأس مقاوم للحرارة، ماء نقي، سخان كهربائي.</div><div class="entry-detail"><b>خطواتك:</b> راقبي انخفاض عمود السائل وثباته في الخليط البارد، ثم ارتفاعه وثباته في الماء المغلي. سجّلي النقطتين وفسّري ما لاحظتِه.</div></div>
+<div class="entry-by">إعداد المعلمة: حفصة طيبي</div>
+<button class="entry-btn" onclick="enterLab()">دخول التجربة ←</button>
+</div></section>
+<div class="surprise" id="surprise" role="note" aria-label="ملاحظة عن الغليان">
+ <div class="surprise-bubble"><div class="surprise-heading">ملاحظة!</div>
+ <div class="surprise-message">لم نُطفئ السخان، ومع ذلك توقف عمود السائل عن الارتفاع!</div>
+ </div>
+</div><div id="app"><header class="top"><div class="brand">مختبر معايرة مقياس درجة الحرارة</div><nav class="tabs"><button onclick="tab('teacher')" id="tab-teacher">عرض المعلمة</button><button onclick="tab('student')" id="tab-student" class="active">تجربة الطالبة</button></nav><button class="minor" onclick="toggleFullscreen()" title="ملء الشاشة">⛶</button></header><div class="progress"><div id="bar"></div></div><main class="main"><section class="screen" id="teacher"><h1 class="heading">تجربة المعايرة أمام الطالبات</h1><div class="teacher-grid"><article class="teacher-card"><div class="illustration">🧊 🌡️</div><h2>النقطة الثابتة السفلى</h2><p>ضعي مقياس حرارة مناسبًا في <b>خليط جليد وماء</b>، وانتظري استقرار القراءة ثم حددي العلامة <b class="em">0°C</b>.</p><p class="tiny">لا يلزم تجميد الماء؛ الجليد والماء موجودان معًا بالفعل.</p></article><article class="teacher-card"><div class="illustration">♨️ 🌡️</div><h2>النقطة الثابتة العليا</h2><p>سخّني ماءً نقيًا حتى يغلي. باستخدام مقياس مناسب وآمن، قيسي درجة الغليان، وهي نحو <b class="em">100°C</b> عند الضغط الجوي القياسي.</p><p class="tiny">لا تلامس بصيلة المقياس قاع الوعاء أو جوانبه.</p></article></div><div class="warn">تنفيذ المعلمة فقط · نظارات واقية · وعاء مقاوم للحرارة · لا تستخدموا مقياسًا غير مخصص للماء المغلي أو تنقلوه فجأة من الثلج إلى الماء المغلي.</div><div class="controls"><button class="action" onclick="tab('student'); resetLab()">ابدئي تجربة الطالبات</button></div></section><section class="screen active" id="student"><h1 class="heading" id="stepTitle">معايرة مقياس درجة الحرارة</h1><div class="labgrid"><div class="labvisual"><div class="zones"><div class="zone" id="roomZone">⌂ <span>الغرفة</span><small>درجة حرارة الغرفة</small></div><div class="zone" id="freezerZone">❄ <span>خليط الجليد والماء</span><small>النقطة السفلى</small></div><div class="zone" id="boilZone">♨ <span>الماء المغلي</span><small>النقطة العليا</small></div></div><div class="vessel"><svg viewBox="0 0 600 430" aria-label="ثرمومتر يتحرك مستوى سائله تدريجيا بين درجة حرارة الغرفة والماء المثلج والمغلي"><defs><clipPath id="thermClip"><rect x="280" y="44" width="24" height="279" rx="12"/></clipPath></defs><g id="cup" opacity="0"><path d="M130 135 L155 375 Q155 395 181 395 H414 Q440 395 445 375 L470 135" fill="none" stroke="#26383b" stroke-width="6"/><path d="M150 225 H452 L434 374 Q431 388 414 388 H181 Q164 388 161 374Z" fill="#f4f4f4" stroke="none"/><g id="iceBlocks"><rect x="183" y="238" width="70" height="52" rx="7" transform="rotate(-12 218 265)" fill="white" stroke="#777" stroke-width="3"/><rect x="360" y="243" width="64" height="48" rx="7" transform="rotate(10 392 267)" fill="white" stroke="#777" stroke-width="3"/></g><g id="bubbleLayer" style="display:none"><circle class="bubble a" cx="195" cy="364" r="10"/><circle class="bubble b" cx="250" cy="348" r="7"/><circle class="bubble c" cx="374" cy="360" r="13"/><circle class="bubble d" cx="406" cy="315" r="8"/><circle class="bubble e" cx="334" cy="356" r="7"/><circle class="bubble f" cx="174" cy="314" r="6"/></g></g><g id="hotPlate" style="display:none"><rect class="heaterBody" x="145" y="398" width="310" height="29" rx="11"/><rect class="heaterSurface" x="158" y="394" width="284" height="11" rx="5"/>
+<g class="heaterGlow" fill="none" stroke="#ff501a" stroke-width="9" stroke-linecap="round"><path d="M175 392 Q190 364 205 392 T235 392 M262 392 Q277 362 292 392 T322 392 M350 392 Q365 362 380 392 T410 392"/></g>
+<circle class="heaterLight" cx="418" cy="413" r="7"/><text x="288" y="422" font-family="Arial" font-size="12" fill="#fff" text-anchor="middle">ON</text></g><g id="thermometer"><rect x="277" y="27" width="30" height="313" rx="15" fill="white" stroke="#1a3033" stroke-width="5"/><circle cx="292" cy="340" r="29" fill="#c73742" stroke="#1a3033" stroke-width="5"/><rect id="liquid" x="286" y="269" width="12" height="61" rx="6" fill="#c73742"/><g id="scaleMarks"><path d="M310 73h18 M310 289h18" stroke="#1a3033" stroke-width="3"/></g>
+<g id="zeroMark"><path d="M310 289 H414" stroke="#202b2d" stroke-width="2.5"/><text x="432" y="298" font-family="Arial" font-size="30" font-weight="bold" fill="#b80013">0°C</text></g>
+<g id="hundredMark"><path d="M310 73 H414" stroke="#202b2d" stroke-width="2.5"/><text x="432" y="82" font-family="Arial" font-size="30" font-weight="bold" fill="#b80013">100°C</text></g>
+<g id="finalMarks"></g></g><g id="steam" style="display:none"><path d="M198 106q-17 -15 0 -30t0 -30 M400 106q-17 -15 0 -30t0 -30" fill="none" stroke="#999" stroke-width="4" stroke-linecap="round"/></g></svg></div><div class="reading" id="labVisualReading"><span>قراءة الثرمومتر</span><b id="temperatureDisplay">درجة الغرفة</b><span id="movementStatus">في درجة حرارة الغرفة</span></div><div id="heatBanner" class="heatbanner" hidden>السخان يعمل، والقراءة ثابتة.</div></div><div class="labwork"><div class="stage-tag" id="stageCount"></div><div class="prompt" id="labPrompt"></div><div class="help" id="labHelp"></div><div id="labActions" class="labactions"></div><div id="labFeedback" class="note"></div></div></div></section></main><footer class="footer"><span id="footL">تقدّم التجربة: 1 من 7</span><span>معايرة مقياس درجة الحرارة · الفيزياء</span></footer></div><script>
+const $=id=>document.getElementById(id);
+function printWorksheet(isKey){document.body.classList.toggle('print-key',Boolean(isKey));window.print();setTimeout(()=>document.body.classList.remove('print-key'),1000)}
+window.addEventListener('afterprint',()=>document.body.classList.remove('print-key'));
+function enterLab(){document.getElementById('entry').classList.add('closed'); autoFullscreen(); resetLab();}
+
+let phase=0,temp=25,anim=null,answer=null,answered=false,surpriseSeen=false,predictionTimer=null,predictionRemaining=10,predictionChoice=null;
+const qs=[
+ {q:'انخفض عمود السائل داخل الثرمومتر ثم استقر. ما الدرجة التي تمثّلها هذه العلامة في خليط الجليد والماء؟',opts:['−10°C','0°C','25°C','100°C'],correct:1,explain:'أحسنتِ! هذه النقطة الثابتة السفلى: 0°C.'},
+ {q:'السخان ما زال يعمل، والفقاعات تتصاعد، لكن عمود السائل توقف عن الارتفاع! ما درجة الغليان التي تشير إليها هذه العلامة؟',opts:['0°C','37°C','100°C','150°C'],correct:2,explain:'رائع! 100°C هي درجة غليان الماء النقي عند الضغط الجوي القياسي.'},
+ {q:'عند استمرار غليان الماء النقي تحت ضغط ثابت، ماذا يحدث لدرجة حرارته رغم استمرار التسخين؟',opts:['ترتفع باستمرار','تبقى ثابتة تقريبًا','تنخفض إلى الصفر','يتوقف الغليان'],correct:1,explain:'تبقى درجة الحرارة ثابتة تقريبًا خلال الغليان عند ضغط ثابت؛ وتُستخدم الطاقة المكتسبة في التحول إلى الحالة الغازية.'},
+ {q:'ما التغير الذي يطرأ على الماء عندما يتحول أثناء الغليان إلى بخار؟',opts:['شكله فقط','تركيبه الكيميائي','حالته الفيزيائية من سائل إلى غاز','نوع المادة'],correct:2,explain:'يتحول الماء من الحالة السائلة إلى الحالة الغازية؛ وهو تغير فيزيائي لا يغير تركيبه الكيميائي.'}
+];
+function tab(t){['teacher','student'].forEach(id=>{ $(id).classList.toggle('active',id===t); $('tab-'+id).classList.toggle('active',id===t) }); $('bar').style.width=t==='student'?((phase+1)/7*100)+'%':'0%'; $('footL').textContent=t==='student'?'تجربة معايرة مقياس الحرارة':'العرض العملي للمعلمة'}
+function autoFullscreen(){if(!document.fullscreenElement)document.documentElement.requestFullscreen?.().catch(()=>{})}
+function toggleFullscreen(){if(!document.fullscreenElement)document.documentElement.requestFullscreen?.().catch(()=>{});else document.exitFullscreen?.()}
+function resetLab(){clearInterval(anim);phase=0;temp=25;answer=null;answered=false;predictionChoice=null;predictionRemaining=10;surpriseSeen=false;$('surprise').classList.remove('show');tab('student');renderLab()}
+function movePhase(p){clearInterval(anim);phase=p;if(p===6)temp=0;if(p===7||p===9)temp=100;answer=null;answered=false;predictionChoice=null;predictionRemaining=10;renderLab();}
+function updateTemp(){
+let y=289-(Math.min(100,Math.max(0,temp))/100)*216;
+$('liquid').setAttribute('y',y);
+$('liquid').setAttribute('height',330-y);
+let display='';
+if(phase===0||phase===10||phase===11) display='درجة الغرفة';
+else if(phase===1) display='انتظري حتى تستقر القراءة';
+else if(phase===2) display=answered?'0°C':'توقفت عند هذه العلامة';
+else if(phase===3) display='الثرمومتر جاهز للنقل';
+else if(phase===4) display='انتظري حتى تستقر القراءة';
+else if(phase===5) display=answered?'100°C':'توقفت عند هذه العلامة';
+else if(phase===6) display='0°C';
+else if(phase===7) display='توقفت عند هذه العلامة رغم استمرار الغليان';
+else if(phase===8) display='يتصاعد البخار والقراءة ثابتة';
+else if(phase===9) display='0°C ← نقطتا المعايرة → 100°C';
+$('temperatureDisplay').textContent=display;
+}
+function startChange(dest,next,duration){clearInterval(anim);phase=dest===0?1:4;temp=dest===0?25:0;renderLab();let start=performance.now(),from=temp;anim=setInterval(()=>{let f=Math.min(1,(performance.now()-start)/duration),ease=1-Math.pow(1-f,2.25);temp=from+(dest-from)*ease;updateTemp();if(f>=1){clearInterval(anim);anim=null;temp=dest;updateTemp();setTimeout(()=>{phase=next;answer=null;answered=false;renderLab();if(next===5&&!surpriseSeen){surpriseSeen=true;$('surprise').classList.add('show')}},650)}},55)}
+function predictionHtml(kind){
+const cold=kind==='cold', correct=cold?1:0;
+return `<div class="predictbox"><div class="q1">توقّعي أولًا</div><div class="q2">إذا وضعنا الثرمومتر في ${cold?'خليط الماء والجليد':'الماء الساخن'}، فماذا يحدث للسائل داخله؟</div><div class="prediction-options">${['يتمدد','ينكمش','يبقى ثابتًا'].map((o,i)=>`<button class="pred-choice ${predictionChoice===i?'active':''}" onclick="selectPrediction(${i})" ${predictionChoice!==null?'disabled':''}>${o}</button>`).join('')}</div>${predictionChoice===null?'':`<div class="prediction-feedback" role="status">${predictionChoice===correct?'✓ صحيح':'✕ خطأ'}</div><div class="pred-bottom"><button class="action" onclick="startChange(${cold?0:100},${cold?2:5},${cold?12000:16000})">انتقلي ←</button></div>`}</div>`;
+}
+function selectPrediction(i){if(predictionChoice!==null)return;predictionChoice=i;renderLab()}
+function closeSurprise(){$('surprise').classList.remove('show')}
+function choose(i){if(answered)return;answer=i;renderLab()}
+function check(){if(answer===null)return;answered=true;renderLab()}
+function advance(){if(phase===2)movePhase(3);else if(phase===5)movePhase(9);else if(phase===7)movePhase(8);else if(phase===8)movePhase(9)}
+function checkConversion(){let expected=phase===6?0:100;let f=Number($('fInput').value),k=Number($('kInput').value);if($('fInput').value===''||$('kInput').value==='')return;$('labFeedback').textContent=Math.abs(f-(expected*1.8+32))<.11&&Math.abs(k-(expected+273.15))<.11?'إجابتك صحيحة! ممتاز.':'راجعي التحويل إلى فهرنهايت وكلفن.';if(Math.abs(f-(expected*1.8+32))<.11&&Math.abs(k-(expected+273.15))<.11)$('finishConvert').disabled=false}
+function showConversion(){let v=phase===6?0:100;$('fInput').value=(v*1.8+32);$('kInput').value=(v+273.15).toFixed(2);$('finishConvert').disabled=false;$('labFeedback').textContent='هذه هي القيم الصحيحة للمقاييس الثلاثة.'}
+function renderLab(){let icy=[1,2,6].includes(phase),hot=[4,5,7,8].includes(phase),room=[0,3,10,11].includes(phase);$('cup').style.opacity=(room||phase===9)?'0':'1';$('iceBlocks').style.display=hot?'none':'';$('bubbleLayer').style.display=hot?'':'none';$('hotPlate').style.display=hot?'':'none';$('steam').style.display=hot?'':'none';$('roomZone').classList.toggle('on',room);$('freezerZone').classList.toggle('on',icy);$('boilZone').classList.toggle('on',hot);$('heatBanner').hidden=!(phase===5||phase===7||phase===8);$('stageCount').textContent='';document.querySelector('.zones').style.display=phase===9?'none':'';
+$('scaleMarks').style.display='none';
+$('zeroMark').style.display=(phase===9)?'inline':'none';
+$('hundredMark').style.display=(phase===9)?'inline':'none';
+$('finalMarks').style.display='none';$('labVisualReading').style.display=phase===9?'none':'';updateTemp();let title='',prompt='',help='',actions='';
+if(phase===0){title='الآن نريد أن نحدد درجة تجمد الماء';prompt='';help='';actions='<button class="action" onclick="movePhase(10)">انتقلي إلى الماء البارد</button>'}
+if(phase===1){title='انتظري حتى تستقر القراءة';prompt='انتظري حتى تستقر القراءة.';help='';actions=''}
+if(phase===2){title='حدّدي درجة الانصهار';prompt='توقّف السائل عن الانخفاض. ما درجة الحرارة؟';help='اختاري الإجابة الصحيحة.';actions=choiceHtml(0)}
+if(phase===3){title='الآن نريد أن نحدد درجة غليان الماء';prompt='';help='';actions='<button class="action" onclick="movePhase(11)">انتقلي إلى الماء الساخن</button>'}
+if(phase===4){title='انتظري حتى تستقر القراءة';prompt='انتظري حتى تستقر القراءة.';help='';actions=''}
+if(phase===10){title='';prompt='';help='';actions=predictionHtml('cold')}
+if(phase===11){title='';prompt='';help='';actions=predictionHtml('hot')}
+if(phase===5){title='حدّدي درجة الغليان';prompt='توقّف السائل عن الارتفاع. ما درجة الحرارة؟';help='';actions=choiceHtml(1)}
+if(phase===6){title='لنحوّل نقطتي المعايرة';prompt='حوّلي النقطة الثابتة السفلى من سلسيوس إلى فهرنهايت وكلفن، ثم سجّلي النتائج في جدول التجربة.';help='استعيني بقانونَي التحويل بين المقاييس، واكتبي الإجابة في الخانتين المناسبتين.';actions=conversionHtml()}
+if(phase===7){title='لماذا لم تزد درجة الحرارة؟';prompt=qs[2].q;help='لاحظي أن الفقاعات والسخان ما زالا يعملان.';actions=choiceHtml(2)}
+if(phase===8){title='ما التغير الذي حدث للماء؟';prompt=qs[3].q;help='لاحظي تحول الماء السائل إلى بخار مع استمرار التسخين.';actions=choiceHtml(3)}
+if(phase===9){title='اكتملت التجربة';prompt='الآن توجهي إلى ورقة العمل، وأكملي البيانات وأجيبي عن الأسئلة.';help='';actions='<div class="controls"><button class="action" onclick="resetLab()">إعادة التجربة</button></div>'}
+$('stepTitle').textContent=title;$('stepTitle').style.display=([10,11].includes(phase)?'none':'');$('labPrompt').textContent=prompt;$('labHelp').textContent=help;$('stageCount').style.display='none';$('labActions').innerHTML=actions;$('labFeedback').textContent=answered&&[2,5,7,8].includes(phase)?qs[phase===2?0:phase===5?1:phase===7?2:3].explain:'';$('movementStatus').textContent=phase===0?'درجة حرارة الغرفة':phase===1||phase===4?'':phase===2||phase===5?'القراءة ثابتة':phase===9?'علامتا المعايرة':' '; tab('student')}
+function choiceHtml(idx){let q=qs[idx];return `<div class="answers">${q.opts.map((o,i)=>`<button class="choice ${answer===i?'selected':''} ${answered&&i===q.correct?'good':''} ${answered&&i===answer&&i!==q.correct?'bad':''}" onclick="choose(${i})" ${answered?'disabled':''}>${'ABCD'[i]} · ${o}</button>`).join('')}</div><div class="controls">${answered?`<button class="action" onclick="${idx===0?'advance()':idx===1?'advance()':idx===2?'advance()':'advance()'}">${idx===3?'عرض نموذج المعايرة ←':'التالي ←'}</button>`:`<button class="action" onclick="check()" ${answer===null?'disabled':''}>تحققي من إجابتك</button>`}</div>`}
+function conversionHtml(){return '<div class="convert"><label>سلسيوس °C<input value="0" readonly></label><label>فهرنهايت °F<input id="fInput" inputmode="decimal" placeholder="؟"></label><label>كلفن K<input id="kInput" inputmode="decimal" placeholder="؟"></label></div><div class="controls"><button class="action" onclick="checkConversion()">تحققي</button><button class="minor" onclick="showConversion()">كشف الإجابة</button><button id="finishConvert" class="action" disabled onclick="movePhase(7)">التالي ←</button></div>'}
+resetLab();
+</script></body></html>
